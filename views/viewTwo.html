@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>viewOne</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="../public/style.css" />
+
+</head>
+<body>
+<div class="content">
+    <header class="common-header">
+        <a class="icon-back" href="javascript:history.go(-1);"></a>
+        <span>viewTwo取消</span>
+    </header>
+    <div>
+        <form action="http://192.168.10.57:4000/regist" method="get">
+            <input type="text" name="first_name" />
+            <br>
+            <input type="text" name="last_name"/>
+            <input type="submit" value="提交">
+            <p>{{name}}</p>
+        </form>
+    </div>
+
+
+</div>
+</body>
+<script type="text/javascript">
+    var adaptPageClass = 'content';
+
+</script>
+
+</html>
+

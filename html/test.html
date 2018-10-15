@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>识别结果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+<body>
+<div class="content">
+    <header class="common-header">
+        <a class="icon-back" href="javascript:history.go(-1);"></a>
+        <span>识别结果</span>
+    </header>
+    <div class="failure" style="padding-top: 45px;">
+        <img src="http://file.88mmmoney.com/766a3778-2642-419a-ae60-29da3e6c50bd" />
+        <p class="failureCont">验证失败</p>
+        <p class="FailurePrompt">可以通过这些方式来提高通过率</p>
+
+        <p class="remaingNumber"> 剩余次数：<i>$!facedetectionNum</i></p>
+    </div>
+    <a href="" class="returnIndex">新验证</a>
+</div>
+<script src="../js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/screen-adapter.js" type="text/javascript" charset="utf-8"></script>
+</body>
+<script type="text/javascript">
+    adaptPageClass = 'content';
+    $(function() {
+        // 去掉在app中的公共头部
+
+        if (navigator.userAgent.indexOf("mamaWallet") != -1 || navigator.userAgent.indexOf("mmwallet") != -1) {
+            $('.common-header').hide();
+            $('.failure').css('margin-top','0px');
+        }
+        if(!isApp()) {
+            var paramJsonStr = JSON.stringify({
+                "pageId": 23,   //23代表人脸识别页面
+                "id":$!loanOrder.id
+        });
+            window.route.routeTo(paramJsonStr);
+        }
+    })
+
+</script>
+
+</html>
+
