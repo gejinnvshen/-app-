@@ -17,7 +17,7 @@
         <a class="icon-back" href="javascript:history.go(-1);"></a>
         <span>viewTwo取消</span>
     </header>
-    <div>
+    <div style="padding-top: 45px;">
         <form action="http://192.168.10.57:4000/regist" method="get">
             <input type="text" name="first_name" />
             <br>
@@ -26,12 +26,44 @@
             <p>{{name}}</p>
         </form>
     </div>
-
+    <div id="personnalInfo">
+        <input type="text" id="name" placeholder="姓名" >
+        <input type="text" id="age" placeholder="年龄">
+        <input type="email" id="name" placeholder="邮箱">
+        <input type="text" id="phone" placeholder="手机号">
+        <input type="button" id="submit" value="提交">
+    </div>
+    <div>我的年纪{{age}}</div>
 
 </div>
+<script src="../public/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../public/screen-adapter.js" type="text/javascript" charset="utf-8"></script>
+
 </body>
 <script type="text/javascript">
     var adaptPageClass = 'content';
+    $(function () {
+        $("#submit").click(function () {
+            $.ajax({
+                type:'post',
+                url:"http://192.168.10.57:4000/personInfo",
+                data:{name:'xiao',age:'22'},
+                dataType:"json",
+                success:function (data) {
+                    console.log(data);
+                },
+                error:function () {
+                    console.log('失败')
+                },
+                async:true
+            })
+        })
+    })
+   /* let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+
+    }
+    xhr.open("get","");*/
 
 </script>
 
